@@ -17,7 +17,7 @@ Getting Started
 In order to create a Nebula, you will first need to install [Vagrant](https://www.vagrantup.com/downloads.html), 
 [Virtual Box](https://www.virtualbox.org/wiki/Downloads) and [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-Then setup a [LastPass](https://lastpass.com/) account and store all your secrets and credentials.
+Then setup a [LastPass](https://lastpass.com/) account and store all your secrets and credentials. 
 
 For your environment, make sure Vagrant and Git is in your path.
 
