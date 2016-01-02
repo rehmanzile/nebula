@@ -2,9 +2,10 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "box-cutter/ubuntu1404-desktop"
 
   config.vm.define "nebula" do |nebula|
+
     #nebula.vm.provision "file", source: "nebula.sh", destination: "/tmp/nebula"
     #nebula.vm.provision :shell, path: "provision.sh"
     nebula.vm.synced_folder "~/nebula", "/nebula"
