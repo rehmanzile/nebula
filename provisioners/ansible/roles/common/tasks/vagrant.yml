@@ -24,8 +24,7 @@
   command: "sudo rm -rf /tmp/*.deb"
   when: vagrant_result.rc > 0
 
-#TODO: Install vagrant plugins
-#- name: install vagrant plugins
-#  sudo: yes
-#  command: "sudo mv /tmp/vagrant /usr/bin/vagrant"
-#  when: vagrant_result.rc > 0
+- name: install vagrant plugins
+  sudo_user: vagrant
+  command: "vagrant plugin install vagrant-vbguest"
+  when: vagrant_result.rc > 0

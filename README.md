@@ -14,23 +14,18 @@ Key features are:
 Getting Started
 ----------------
 
-In order to create a Nebula, you will first need to install [Vagrant](https://www.vagrantup.com/downloads.html), 
-[Virtual Box](https://www.virtualbox.org/wiki/Downloads) and [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+In order to create a Nebula, you will need to install
+ 
+* [Vagrant](https://www.vagrantup.com/downloads.html), 
+* [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) & [Vagrant VMWare license](https://www.vagrantup.com/vmware)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-Then setup a [LastPass](https://lastpass.com/) account and store all your secrets (username/passwords. ssh keys etc.). 
+Then setup your [LastPass](https://lastpass.com/) account and store your secrets (username/passwords. ssh keys etc.). 
 
-For your environment, make sure Vagrant and Git is in your path.
-
-```sh
-$ which vagrant
-...
-$ which git
-...
-```
 Install all the dependencies.
 
 ```sh
-$ vagrant plugin install vagrant-vbguest
+$ vagrant plugin install vagrant-vmware-fusion
 ...
 ```
 
@@ -42,8 +37,10 @@ $ git clone https://github.com/pepperstack/nebula.git
 ...
 ```
 
+Finally create the virtual machine
 
-Troubleshooting
-----------------
-
-Enable VT-X https://support.apple.com/en-gb/HT203296
+```sh
+$ cd nebula
+$ vagrant up --provider vmware_fusion
+...
+```

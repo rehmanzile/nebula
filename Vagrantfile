@@ -14,9 +14,9 @@ Vagrant.configure(2) do |config|
 
     nebula.vm.provider "virtualbox" do |v|
       #TODO: Generate a unique UUID for each instance
-      v.name = "nebula"
-      v.memory = 2048
-      v.cpus = 8
+      v.name = "eskimo"
+      v.memory = 4096
+      v.cpus = 2
     end
   end
 
