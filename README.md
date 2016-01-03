@@ -16,9 +16,9 @@ Getting Started
 
 In order to create a Nebula, you will need to install
  
-* [Vagrant](https://www.vagrantup.com/downloads.html), 
-* [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) & [Vagrant VMWare license](https://www.vagrantup.com/vmware)
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+* [Vagrant](https://www.vagrantup.com/downloads.html) 
+* [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) along with the [Vagrant license for Fusion](https://www.vagrantup.com/vmware)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 Then setup your [LastPass](https://lastpass.com/) account and store your secrets (username/passwords. ssh keys etc.). 
 
