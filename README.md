@@ -19,7 +19,7 @@ Dependencies
 ------------
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) 
-* [Buy Vagrant license for Fusion](https://www.vagrantup.com/vmware)
+* [Vagrant license for Fusion](https://www.vagrantup.com/vmware)
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [LastPass](https://lastpass.com/) account for storing secrets 
 
