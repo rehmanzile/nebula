@@ -10,26 +10,29 @@ Key features are:
   CLI](https://github.com/lastpass/lastpass-cli).
 * **Otto**: [Otto](https://ottoproject.io/) is used to create a dev environment and deploy it in production.
 
+Provider Support
+-----------------
+* [VMWare Fusion](https://www.vmware.com/products/fusion/fusion-evaluation.html)
+
+
+Dependencies
+------------
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+* [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) along with the [Vagrant license for Fusion](https://www.vagrantup.com/vmware)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [LastPass](https://lastpass.com/) account for storing secrets 
 
 Getting Started
 ----------------
 
-In order to create a Nebula, you will need to install
- 
-* [Vagrant](https://www.vagrantup.com/downloads.html) 
-* [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) along with the [Vagrant license for Fusion](https://www.vagrantup.com/vmware)
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-
-Then setup your [LastPass](https://lastpass.com/) account and store your secrets (username/passwords. ssh keys etc.). 
-
-Install all the dependencies:
+Install vagrant plugins and fusion license:
 
 ```sh
 $ vagrant plugin install vagrant-vmware-fusion
-...
+$ vagrant plugin license vagrant-vmware-fusion license.lic
 ```
 
-Run the following commands in your terminal:
+Run the following commands to setup your virtual machine:
 
 ```sh
 $ cd ~
@@ -37,3 +40,16 @@ $ git clone https://github.com/pepperstack/nebula.git
 $ cd nebula
 $ vagrant up --provider vmware_fusion
 ```
+
+Your virtual machine will be created with the default name of "eskimo" Nebula. Alternatively, you can edit the 
+nebula_name variable in Vagrantfile for creating more nebulae. 
+
+
+Now ssh to your Nebula:
+
+```sh
+$ vagrant ssh <nebula-name>
+```
+
+You are to go through [Otto Getting Started](https://ottoproject.io/intro/getting-started/dev.html) for developing and
+deploying your applications. Refer to [What is Otto?](https://ottoproject.io/intro/index.html) for more information. 
