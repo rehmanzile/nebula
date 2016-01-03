@@ -1,55 +1,56 @@
 # Nebula
 
-Nebula is a virtual machine that creates & manages your development and production environment.
-
 A modern system requires access to multitude of development and production environments. Each environment has separate
-credentials, requirements and providers. Key features are:
+credentials, requirements and providers. Nebula is a virtual machine that creates & manages your development and 
+production environments.
+
+Key features are:
 
 * **Secure Secret Access**: Secure secrets are stored in [LastPass](https://lastpass.com/) and retrieved via [LastPass 
-  CLI](https://github.com/lastpass/lastpass-cli). 
+  CLI](https://github.com/lastpass/lastpass-cli).
+* **Otto**: [Otto](https://ottoproject.io/) is used for creating your dev environment and deploying it in production.
 
+Provider Support
+-----------------
+* [VMWare Fusion](https://www.vmware.com/products/fusion/fusion-evaluation.html)
+
+
+Dependencies
+------------
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+* [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) 
+* [Vagrant license for Fusion](https://www.vagrantup.com/vmware)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [LastPass](https://lastpass.com/) account for storing secrets 
 
 Getting Started
 ----------------
 
-In order to create a Nebula, you will first need to install [Vagrant](https://www.vagrantup.com/downloads.html) and 
-[Virtual Box](https://www.virtualbox.org/wiki/Downloads). 
-
-Then setup a [LastPass](https://lastpass.com/) account and store all your secrets and credentials.
-
-For your environment, make sure virtualbox is in your path.
+Install vagrant plugins and fusion license:
 
 ```sh
-$ which vagrant
-...
+$ vagrant plugin install vagrant-vmware-fusion
+$ vagrant plugin license vagrant-vmware-fusion license.lic
 ```
-Install all the dependencies.
+
+Run the following commands to setup your virtual machine:
 
 ```sh
-$ vagrant plugin install vagrant-vbguest
-...
+$ cd ~
+$ git clone https://github.com/pepperstack/nebula.git
+$ cd nebula
+$ vagrant up --provider vmware_fusion
 ```
 
- 
+Your virtual machine will be created with the default name of "eskimo" Nebula. Alternatively, you can edit the 
+nebula_name variable in Vagrantfile for creating more nebulae. 
 
-## Provider Support
 
-Virtual Box
+Now ssh to your Nebula:
 
-## Dependencies
-
-* [Vagrant](https://www.vagrantup.com/downloads.html)
-
-## Installation
-
-* Install Virtual Box plugin for Vagrant
-
-```
-vagrant plugin install vagrant-vbguest
+```sh
+$ vagrant ssh <nebula-name>
 ```
 
-* Spin up the virtual machine
-
-```
-vagrant up --provider virtualbox
-```
+You are ready to go through [Otto Getting Started](https://ottoproject.io/intro/getting-started/dev.html) for developing 
+and deploying your applications. Refer to [What is Otto?](https://ottoproject.io/intro/index.html) for more information. 

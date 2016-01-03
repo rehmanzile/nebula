@@ -1,0 +1,6 @@
+---
+- name: provision base packages
+  hosts: all
+  sudo: yes
+  roles:
+    - common

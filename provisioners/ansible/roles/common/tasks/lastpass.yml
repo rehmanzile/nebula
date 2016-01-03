@@ -1,0 +1,14 @@
+---
+- name: clone last pass repo
+  git:  repo=https://github.com/lastpass/lastpass-cli.git
+        dest=~/tools/lastpass-cli
+
+- name: make last pass
+  command: "make"
+  args:
+    chdir: ~/tools/lastpass-cli/
+
+- name: install last pass
+  command: "sudo make install"
+  args:
+    chdir: ~/tools/lastpass-cli/
