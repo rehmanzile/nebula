@@ -22,25 +22,18 @@ In order to create a Nebula, you will need to install
 
 Then setup your [LastPass](https://lastpass.com/) account and store your secrets (username/passwords. ssh keys etc.). 
 
-Install all the dependencies.
+Install all the dependencies:
 
 ```sh
 $ vagrant plugin install vagrant-vmware-fusion
 ...
 ```
 
-Clone Nebula in your home directory
+Run the following commands in your terminal:
 
 ```sh
 $ cd ~
 $ git clone https://github.com/pepperstack/nebula.git
-...
-```
-
-Finally create the virtual machine
-
-```sh
 $ cd nebula
 $ vagrant up --provider vmware_fusion
-...
 ```
