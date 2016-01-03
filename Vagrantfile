@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define $nebula_name do |nebula|
     nebula.vm.hostname = $nebula_name
-    nebula.vm.synced_folder "~/nebula", "/nebula"
+    nebula.vm.synced_folder "~", "/home/vagrant/"
 
     nebula.vm.provider "vmware_fusion" do |v|
       #TODO: Generate a unique UUID for each instance
