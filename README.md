@@ -41,3 +41,9 @@ $ cd ~
 $ git clone https://github.com/pepperstack/nebula.git
 ...
 ```
+
+
+Troubleshooting
+----------------
+
+Enable VT-X https://support.apple.com/en-gb/HT203296

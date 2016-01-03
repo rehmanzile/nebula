@@ -1,0 +1,31 @@
+---
+- name: check if vagrant is already installed
+  shell: "which vagrant"
+  register: vagrant_result
+  ignore_errors: true
+
+- name: download hashicorp vagrant
+  sudo_user: vagrant
+  get_url: url=https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb
+           dest=/tmp
+  when: vagrant_result.rc > 0
+
+- name: install vagrant deb
+  sudo: yes
+  apt: deb="/tmp/vagrant_1.8.1_x86_64.deb"
+  when: vagrant_result.rc > 0
+
+- name: insure vagrant exists in path
+  sudo_user: vagrant
+  command: "which vagrant"
+
+- name: cleanup vagrant deb file
+  sudo: yes
+  command: "sudo rm -rf /tmp/*.deb"
+  when: vagrant_result.rc > 0
+
+#TODO: Install vagrant plugins
+#- name: install vagrant plugins
+#  sudo: yes
+#  command: "sudo mv /tmp/vagrant /usr/bin/vagrant"
+#  when: vagrant_result.rc > 0

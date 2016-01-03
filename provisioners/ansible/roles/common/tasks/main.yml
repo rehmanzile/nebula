@@ -1,0 +1,28 @@
+---
+- name: update apt cache
+  apt: update_cache=yes
+
+- name: install common apt packages
+  apt: name={{ item }}
+  with_items:
+    - unzip
+    - git-all
+    - python-dev
+    - python-virtualenv
+    - openssl
+    - libcurl4-openssl-dev
+    - libxml2
+    - libssl-dev
+    - libxml2-dev
+    - pinentry-curses
+    - xclip
+    - openssh-client
+    - tree
+    - redis-tools
+    - supervisor
+
+- include: virtualenv.yml
+- include: lastpass.yml
+- include: virtualbox.yml
+- include: vagrant.yml
+- include: otto.yml

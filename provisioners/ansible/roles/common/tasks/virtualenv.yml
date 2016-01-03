@@ -1,0 +1,31 @@
+---
+- name: create environment directory
+  su:   vagrant
+  file: path=~/env
+        state=directory
+        owner=vagrant
+        force=yes
+
+- name: copy requirements file
+  su:   vagrant
+  copy: src="{{ role_path }}/files/requirements.txt"
+        dest=~/env/requirements.txt
+        mode=755
+
+- name: create virtualenv directory if it does not already exist
+  su:   vagrant
+  file: path=~/{{ stack }}
+        state=directory
+
+- name: setup virtualenv
+  su:  vagrant
+  pip: requirements=~/env/requirements.txt
+       virtualenv=~/{{ stack }}
+       virtualenv_site_packages=yes
+
+- name: enable virtualenv at startup
+  su:  vagrant
+  lineinfile: dest=~/.bashrc
+              regexp='source\s\~\/\w+\/bin\/activate'
+              line="source ~/{{ stack }}/bin/activate"
+              state=present

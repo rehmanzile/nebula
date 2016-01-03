@@ -1,0 +1,32 @@
+---
+- name: check if otto is already installed
+  shell: "which otto"
+  register: otto_result
+  ignore_errors: true
+
+- name: download hashicorp otto
+  sudo_user: vagrant
+  get_url: url=https://releases.hashicorp.com/otto/0.1.2/otto_0.1.2_linux_amd64.zip
+           dest=/tmp
+  when: otto_result.rc > 0
+
+- name: unzip hashicorp otto
+  sudo_user: vagrant
+  unarchive: src=/tmp/otto_0.1.2_linux_amd64.zip
+             dest=/tmp
+             copy=no
+  when: otto_result.rc > 0
+
+- name: copy otto script
+  sudo: yes
+  command: "sudo mv /tmp/otto /usr/bin/otto"
+  when: otto_result.rc > 0
+
+- name: insure otto exists in path
+  sudo_user: vagrant
+  command: "which otto"
+
+- name: cleanup otto zip file
+  sudo: yes
+  command: "sudo rm -rf /tmp/*.zip"
+  when: otto_result.rc > 0
