@@ -19,10 +19,10 @@ EOF
 
 cnc_banner
 
-echo -n "Enter Cloudgenix Username: "
+echo -n "Enter LastPass username: "
 read USERNAME
-CGNX_ACCOUNT="${USERNAME}\@cloudgenix.com"
-lpass login ${CGNX_ACCOUNT}
+LPASS_ACCOUNT="${USERNAME}"
+lpass login ${LPASS_ACCOUNT}
 
 echo "Copying ssh keys"
 if [ ! -f "~/.ssh/id_rsa" ]; then
