@@ -8,7 +8,7 @@ Key features are:
 
 * **Secure Secret Access**: Secure secrets are stored in [LastPass](https://lastpass.com/) and retrieved via [LastPass 
   CLI](https://github.com/lastpass/lastpass-cli).
-* **Otto**: [Otto](https://ottoproject.io/) is used to create a dev environment and deploy it in production.
+* **Otto**: [Otto](https://ottoproject.io/) is used for creating your dev environment and deploying it in production.
 
 Provider Support
 -----------------
@@ -18,7 +18,8 @@ Provider Support
 Dependencies
 ------------
 * [Vagrant](https://www.vagrantup.com/downloads.html)
-* [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) along with the [Vagrant license for Fusion](https://www.vagrantup.com/vmware)
+* [VMWare Fusion Pro](https://www.vmware.com/products/fusion/fusion-evaluation.html) 
+* [Buy Vagrant license for Fusion](https://www.vagrantup.com/vmware)
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [LastPass](https://lastpass.com/) account for storing secrets 
 
@@ -51,5 +52,5 @@ Now ssh to your Nebula:
 $ vagrant ssh <nebula-name>
 ```
 
-You are to go through [Otto Getting Started](https://ottoproject.io/intro/getting-started/dev.html) for developing and
-deploying your applications. Refer to [What is Otto?](https://ottoproject.io/intro/index.html) for more information. 
+You are ready to go through [Otto Getting Started](https://ottoproject.io/intro/getting-started/dev.html) for developing 
+and deploying your applications. Refer to [What is Otto?](https://ottoproject.io/intro/index.html) for more information. 
