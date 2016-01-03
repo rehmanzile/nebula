@@ -10,6 +10,8 @@ Key features are:
   CLI](https://github.com/lastpass/lastpass-cli).
 * **Otto**: [Otto](https://ottoproject.io/) is used for creating your dev environment and deploying it in production.
 
+![Nebula](https://pepper.atlassian.net/wiki/download/attachments/15630340/nebula_graphic.png?version=6&modificationDate=1451851890831&api=v2)
+
 Provider Support
 -----------------
 * [VMWare Fusion](https://www.vmware.com/products/fusion/fusion-evaluation.html)
