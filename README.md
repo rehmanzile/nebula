@@ -41,6 +41,7 @@ Run the following commands to setup your virtual machine:
 
 ```sh
 $ cd ~
+$ mkdir ~/workspace
 $ git clone https://github.com/pepperstack/nebula.git
 $ cd nebula
 $ vagrant up --provider vmware_fusion
