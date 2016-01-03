@@ -9,6 +9,8 @@ Key features are:
 * **Secure Secret Access**: Secure secrets are stored in [LastPass](https://lastpass.com/) and retrieved via [LastPass 
   CLI](https://github.com/lastpass/lastpass-cli).
 * **Otto**: [Otto](https://ottoproject.io/) is used for creating your dev environment and deploying it in production.
+* **Nebula** creates virtual machines to separate each environment that **Otto** manages while providing access to your 
+  project directories in your own IDE (Integrated Debugging Environment).
 
 ![Nebula](https://pepper.atlassian.net/wiki/download/attachments/15630340/nebula_graphic.png?version=6&modificationDate=1451851890831&api=v2)
 
